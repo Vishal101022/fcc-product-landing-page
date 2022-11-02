@@ -1,0 +1,5 @@
+# explicitly designates to end-of-line normalization
+*.txt text
+*.html text
+*.css text
+*.js text
