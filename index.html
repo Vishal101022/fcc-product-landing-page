@@ -6,18 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing-page</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 </head>
 <body>
     <div class="wrapper">
         <header id="header">
-            <div class="header">
+            <div class="header nav-container">
+                <ul class="toggle active">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
                 <nav id="nav-bar">
                     <img src="img/starbuck_logo.png" alt="starbuck logo" id="header-img" width="100" class="logo">
-                    <ul class="nav-menu">
-                        <li><a href="#menu-section" class="nav-link">Menu</a></li>
-                        <li><a href="#video-section" class="nav-link">What's new</a></li>
-                        <li><a href="#subscribe-section" class="nav-link">Store</a></li>
-                    </ul>
+                    <div class="sidebar active">
+                      <ul class="nav-menu">
+                          <li><a href="#menu-section" class="nav-link">Menu</a></li>
+                          <li><a href="#video-section" class="nav-link">What's new</a></li>
+                          <li><a href="#subscribe-section" class="nav-link">Store</a></li>
+                      </ul>
+                    </div>
                 </nav>
             </div>
         </header>
@@ -82,5 +90,13 @@
             </div>
         </footer>
     </div>
+    <script>
+        $(document).ready(function(){
+              $('.nav-container ul.toggle').click(function(){
+                  $(this).toggleClass('active');
+                  $('.nav-container .sidebar').toggleClass('active');
+              })
+          })
+  </script>
 </body>
 </html>
