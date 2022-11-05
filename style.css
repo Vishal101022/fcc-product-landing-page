@@ -58,14 +58,13 @@ header ul li a {
     color: var(--secondary-color);
     margin: 0 60px 8px 0;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     padding: 5px 10px;
     letter-spacing: 1px;
 }
 header ul li a:hover {
     border-bottom:2px solid var(--primary-color) ;
-    font-weight: 500;
-    
+    margin-bottom:6px;  
 }
 .content {
     position: relative;
@@ -186,7 +185,7 @@ header ul li a:hover {
     height: 500px;
     border-radius: 8px;
     margin-bottom: 12rem;
-    box-shadow: 0 3.2px 7.2px 0 rgb(0 0 0 / 13%), 0 0.6px 1.8px 0 rgb(0 0 0 / 11%);
+    box-shadow: 0 3.2px 7.2px 0 rgb(0 0 0 / 50%), 0 0.10px 1.8px 0 rgb(0 0 0 / 11%);
 }
 #video-section h3 {
     font-size: 3.5rem;
@@ -261,6 +260,81 @@ footer{
 }
 
 @media(max-width:950px){
+    header nav {
+        padding: 20px;
+    }
+
+    /*Adding hamburger menu */
+.nav-container ul.toggle{
+    position: fixed;
+    z-index: 5;
+    top: 4%;  right: 3%;
+    width: 40px;   height: 40px;
+    cursor: pointer;
+}
+.nav-container ul.toggle li{
+    position: absolute;
+    left: 5%;
+    transform: translateY(-50%);
+    height: 5px;  width: 90%;
+    list-style: none;
+    background:var(--secondary-color);
+    transition: .2s;
+}
+.nav-container ul.toggle li:nth-of-type(1){
+    top: 20%;
+}
+.nav-container ul.toggle li:nth-of-type(2){
+    top: 50%;
+}
+.nav-container ul.toggle li:nth-of-type(3){
+    top: 80%;
+}
+.nav-container ul.toggle.active li:nth-of-type(1){
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+.nav-container ul.toggle.active li:nth-of-type(2){
+    left:-100%;
+    opacity: 0;
+}
+.nav-container ul.toggle.active li:nth-of-type(3){
+    top: 50%;
+    transform:  translateY(-50%) rotate(-45deg);
+}
+
+.nav-container .sidebar{
+    position: fixed;
+    top: 0;  right: -350px;
+    background: var(--bg-color);
+    width: 350px;   height: 100vh;
+    box-sizing: border-box;
+    padding: 50px 40px;
+    transition: .2s;
+    z-index: 1;
+}
+.nav-container .sidebar.active{
+    right: 0;
+    box-shadow: 0 3.2px 7.2px 0 rgb(0 0 0 / 50%), 0 0.10px 1.8px 0 rgb(0 0 0 / 50%);
+}
+.nav-container .sidebar ul.nav-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 100px;
+    margin-left: 50px;
+    text-transform: uppercase;
+}
+.nav-container .sidebar ul.nav-menu li a{
+    display: inline-block;
+    position: relative;
+    color:var(--secondary-color);
+    font-size: 2rem;
+}
+/*end of hamburger menu*/
+
     .content h2{
         font-size: 4rem;
     }
@@ -290,9 +364,6 @@ footer{
     }
 }
 @media(max-width:800px){
-    header nav {
-        padding: 20px 70px;
-    }
     .content{
         padding: 20px 70px;
     }
@@ -400,4 +471,8 @@ footer{
     }
 
 }
-
+@media(max-width:550px){
+    .nav-container .sidebar{
+        width: 100%;
+    }
+}
