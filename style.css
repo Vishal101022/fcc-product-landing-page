@@ -129,7 +129,8 @@ header ul li a:hover {
 }
 .img-box .img-1 {
     animation-delay: 3s;
-    width: 270px;
+    transform: rotate(-15deg);
+    width: 220px;
 }
 .img-box .img-2 {
     animation-delay: 6s;
