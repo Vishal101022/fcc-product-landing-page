@@ -93,13 +93,30 @@
         </footer>
     </div>
     <script>
-        $(document).ready(function(){
+        // fixed-hide the Sidebar by default when page loaded
+     $(document).ready(function(){
               $('.nav-container ul.toggle').click(function(){
                   $(this).toggleClass('active');
                   $('.nav-container .sidebar').toggleClass('active');
               })
               $('.nav-container ul.toggle').trigger('click');
           })
+        // change smooth transition of img-box
+          let myIndex = 0;
+          carousel();
+          function carousel() {
+            let i;
+            let x = document.getElementsByClassName("image");
+            for (i = 0; i < x.length; i++) {
+              x[i].style.display = "none";  
+            }
+            myIndex++;
+            if (myIndex > x.length) {myIndex = 1}    
+            //x[myIndex-1].style.display = "block";  
+            $(x[myIndex-1]).fadeIn(2000);
+            $(x[myIndex-1]).fadeOut(2000);
+            setTimeout(carousel, 4000);    
+          }
   </script>
 </body>
 </html>

@@ -96,7 +96,7 @@ header ul li a:hover {
     max-width: 70ch;
     font-size: 1.5rem;
 }
-    /* main image of starbucks(transition) */
+    /* main image of starbucks(transition) 2s*/
 .img-box {
     position: relative;
     width:350px;
@@ -107,38 +107,18 @@ header ul li a:hover {
     position: absolute;
     top: 7em;
     left: 6em;
-    width: 230px;
-    animation: imgFade 9s ease-in-out infinite;
-}
-@keyframes imgFade {
-    0% {
-      opacity:1;
-    }
-    17% {
-      opacity:1;
-    }
-    25% {
-      opacity:0;
-    }
-    92% {
-      opacity:0;
-    }
-    100% {
-      opacity:1;
-    }
+    max-width: 220px;
 }
 .img-box .img-1 {
-    animation-delay: 3s;
-    width: 270px;
+    top:30px;
 }
 .img-box .img-2 {
-    animation-delay: 6s;
+   transform: rotate(20deg);
+   left: 50px;
 }
 .img-box .img-3 {
-    animation-delay: 9s;
-    transform: rotate(-15deg);
-    top:-10px;
-    width: 220px;
+    top:-20px;
+    left: 70px;
 }
    /*  end of img-box */
 .menu-wrapper {
