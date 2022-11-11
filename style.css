@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
+    overflow:unset;
 }
 :root{
     --primary-color:#017143;
@@ -13,7 +14,7 @@
     --bg-color:#fff;
     --card-color:#f9f9f9;
     --footer-color:#0e382c;
-    --body-padding: 10px 80px;
+    --body-padding: 1.5em 8em;
 }
 .wrapper {
     width: 100vw;
@@ -123,15 +124,13 @@ header ul li a:hover {
    /*  end of img-box */
 .menu-wrapper {
     width: 100%;
-    margin: 12rem 0;
     padding: var(--body-padding);
 }
 .product-list {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 5rem;
+    gap: 5em;
     list-style-type: none;
 }
 .card {
@@ -202,19 +201,17 @@ header ul li a:hover {
     width: 850px;
     height: 500px;
     border-radius: 8px;
-    margin-bottom: 12rem;
     box-shadow: 0 3.2px 7.2px 0 rgb(0 0 0 / 50%), 0 0.10px 1.8px 0 rgb(0 0 0 / 11%);
 }
 #video-section h3 {
     font-size: 3.5rem;
     font-weight: 500;
-    padding: 2rem;
+    padding: 2rem 0;
 }
 #form {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 40px;
 }
 
 #email {
@@ -224,7 +221,7 @@ header ul li a:hover {
     border-radius: 30px 0 0 30px;
     border: 1px solid var(--primary-color) ;
     outline: 0;
-    padding: 0px 30px;
+    padding: 0 3em;
     background: none;
     background: #fff;
     box-shadow: 0px 0px 28px 2px rgb(0 0 0 / 10%);
@@ -242,6 +239,7 @@ header ul li a:hover {
 }
 #subscribe-section .section-title {
     font-size: 3rem;
+    padding: 2rem 1rem;
     font-weight: 500;
 }
 footer{
@@ -255,25 +253,118 @@ footer{
     font-size: 1.4rem;
     margin-top: 4em;
 }
-/* media quries */
-@media(max-width:950px){
-    header nav {
-        padding: 20px;
+@media(max-width:1050px){
+   .content h2 {
+    font-size: 5rem;
+   }
+   .content span {
+    font-size:5rem;
+   }
+   .content p {
+    max-width: 50ch;
+   }
+   .menu-wrapper h2, 
+   #video-section .section-title,
+   #subscribe-section .section-title
+     {
+        font-size: 2.5rem;
+   }
+    section {
+        padding: 1.5em 4em;
     }
-
+    header nav {
+        padding: 1.5em 4em;
+    }
+    .img-box img {
+        max-width:200px;
+    }
+    .product-list {
+       gap: 3em;
+    }
+    .card {
+        min-width: 220px;
+        padding: 1rem;
+    }
+    .product-list img{
+        width: 150px;
+        height: 150px;
+    }
+    #video{
+        width:calc(100vw - 120px);
+    }
+    #email{
+       width: calc(100vw - 180px);
+    }
+    #submit{
+        min-width: 50px;
+    }
+@media(max-width:775px){
+   .content h2 {
+    font-size: 4rem;
+   }
+   .content span {
+    font-size:4rem;
+   }
+   .content p {
+    max-width: 40ch;
+   }
+   .menu-wrapper h2, 
+   #video-section .section-title,
+   #subscribe-section .section-title
+     {
+        font-size: 2rem;
+   }
+   .content {
+    flex-direction: column;
+   }
+   .img-box  {
+    width: 300px;
+    height: 400px;
+   }
+   .img-box img {
+    width: 150px;
+   }
+   section {
+    padding: 1.5em 3em ;
+   }
+   header nav {
+    padding: 1.5rem 3rem;
+   }
+   .nav-container {
+    margin-bottom: 8em;
+   }
+   .product-list {
+    gap:2em;
+   }
+   .card {
+    min-width: 180px;
+   }
+   .product-list img {
+    width: 120px;
+    height: 120px;
+   }
+   #video {
+    width: calc(100vw - 90px);
+   }
+   #email {
+    width: calc(100vw - 120px);
+   }
+   #submit {
+    min-width: 40px;
+   }
     /*Adding hamburger menu */
 .nav-container ul.toggle{
     position: fixed;
-    z-index: 5;
-    top: 4%;  right: 3%;
-    width: 40px;   height: 40px;
+    z-index: 999;
+    top: 3.5%;  right: 6%;
+    width: 30px;   height: 30px;
     cursor: pointer;
 }
 .nav-container ul.toggle li{
     position: absolute;
     left: 5%;
     transform: translateY(-50%);
-    height: 5px;  width: 90%;
+    height: 4px;  width: 100%;
     list-style: none;
     background:var(--secondary-color);
     transition: .2s;
@@ -302,11 +393,10 @@ footer{
 
 .nav-container .sidebar{
     position: fixed;
-    top: 0;  right: -350px;
+    top: 0;  right: -320px;
     background: var(--bg-color);
-    width: 350px;   height: 100vh;
+    width: 320px;   height: 400px;
     box-sizing: border-box;
-    padding: 50px 40px;
     transition: .2s;
     z-index: 1;
 }
@@ -320,8 +410,7 @@ footer{
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    margin-top: 100px;
-    margin-left: 50px;
+    margin-top: 10rem;
     text-transform: uppercase;
 }
 .nav-container .sidebar ul.nav-menu li a{
@@ -330,146 +419,41 @@ footer{
     color:var(--secondary-color);
     font-size: 2rem;
 }
-/*end of hamburger menu*/
-
-    .content h2{
-        font-size: 4rem;
-    }
-    .content span {
-        font-size: 4rem;
-    }
-    .img-box img {
-        max-width:250px;
-        margin-right:10px
-    }
-    .card {
-        min-width: 200px;
-        min-height: 200px;
-    }
-    .product-list img{
-        width: 150px;
-        height: 150px;
-    }
-    #video{
-        width: 750px;
-    }
-    #subscribe-section .section-title{
-        font-size: 2.5rem;
-    }
-    #email{
-        width: 550px;
-    }
-}
-@media(max-width:800px){
-    .content{
-        padding: 20px 70px;
-    }
-    .content h2{
-        font-size: 3rem;
-    }
-    .content span {
-        font-size: 3rem;
-    }
-    .img-box img {
-        max-width:250px;
-        margin-right:10px
-    }
-    .card {
-        min-width: 180px;
-        min-height: 200px;
-    }
-    .product-list{
-        gap: 1rem;
-    }
-    .product-list img{
-        width: 150px;
-        height: 150px;
-    }
-    .menu-wrapper h2{
-        font-size: 2rem;
-    }
-    .menu-des {
-        font-size: 1.5rem;
-    }
-    #video{
-        width:calc(100vw - 100px);
-    }
-    #subscribe-section .section-title{
-        font-size: 2rem;
-    }
-    #video-section h3{
-        font-size:2rem;
-    }
-    #email{
-       width: calc(100vw - 200px);
-        height:40px;
-        padding: 0px 5px;
-        font-size: 1.2rem;
-    }
-    #submit{
-        min-width: 50px;
-        font-size:1.2rem;
-        margin-top: 0.5rem;
-    }
-
 }
 @media(max-width:650px){
-    header nav {
-        padding: 20px 40px;
+    .product-list {
+        flex-direction: column;
     }
-    header ul li a{
-        margin: 0 30px 8px 0;
-    }
-    .content{
-        padding: 20px 40px;
-    }
-    
-    .content p{
-        font-size:1rem;
-    }
-  
-    .img-box img {
-        max-width:200px;
-        margin-right:1px
-    }
-    .card {
-        min-width: 120px;
-        min-height: 150px;
-    }
-    .product-list{
-        gap: 0.5rem;
-    }
-    .product-list img{
-        width: 120px;
-        height: 120px;
-    }
-    .menu-wrapper h2{
-        font-size: 1.5rem;
-    }
-    .menu-wrapper h6 {
-        font-size:1.2rem;
-    }
-    .menu-des {
-        font-size: 1.3rem;
-    }
-    #video{
-        width:calc(100vw - 100px);
-    }
-    #subscribe-section .section-title{
-        font-size: 1.5rem;
-    }
-    #video-section h3{
-        font-size:1.5rem;
-    }
-    
     .btn{
         font-size:1rem;
         width: 120px;
     }
-
-}
-@media(max-width:550px){
-    .nav-container .sidebar{
-        width: 100%;
+    .nav-container .sidebar {
+         width: 250px; height: 250px;
     }
+}
+@media(max-width:450px){
+     html {
+        font-size: 8px;
+     }
+     section {
+        padding: 1.5rem 1rem;
+     }
+     .content {
+        gap: 5em;
+    }
+    .content p{
+        max-width: auto;
+    }
+    .menu-wrapper{
+        padding: 1.5em 1em;
+    }
+    .card {
+        min-width: 200px;
+    }
+    #email {
+        width: 250px;
+        height: 40px;
+    }
+
 }
